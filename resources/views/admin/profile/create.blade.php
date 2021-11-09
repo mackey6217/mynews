@@ -17,13 +17,13 @@
                     @endif
                     <div class="form-group row">
                         <label class="col-md-1">氏名</label>
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-1">性別</label>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
                         </div>
                     </div>
