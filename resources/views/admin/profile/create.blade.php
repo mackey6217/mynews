@@ -16,29 +16,31 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-1">氏名</label>
+                        <label class="col-md-1" for="name">氏名</label>
                         <div class="col-md-4">
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-1">性別</label>
+                        <label class="col-md-1" for="gender">性別</label>
                         <div class="col-md-4">
                             <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-1">趣味</label>
+                        <label class="col-md-1" for="hoby">趣味</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-1">自己紹介</label>
+                        <label class="col-md-1" for="introduction">自己紹介</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
+                    {{ csrf_field() }}
+                    <input type="submit" class="btn btn-primary" value="保存">
                 </form>
             </div>
         </div>
