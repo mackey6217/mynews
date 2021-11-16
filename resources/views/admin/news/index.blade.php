@@ -11,7 +11,7 @@
                 <a href="{{ action('Admin\NewsController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
             <div class="col-md-8">
-                <form action"{{ action('Admin\NewsController@index') }}" method="get">
+                <form action="{{ action('Admin\NewsController@index') }}" method="get">
                     <div class="form-group row">
                         <label class="col-md-2">タイトル</label>
                         <div class="col-md-8">
@@ -25,7 +25,7 @@
                 </form>
             </div>
         </div>
-        <div clasas="row">
+        <div class="row">
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
                     <table class="table table-dark">
@@ -34,14 +34,23 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル</th>
                                 <th width="50%">本文</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $news)
                                 <tr>
                                     <th>{{ $news->id }}</th>
-                                    <td>{{ \str::limit($news->title, 100) }}</td>
-                                    <td>{{ \str::limit($news->body, 250) }}</td>
+                                    <td>{{ str_limit($news->title, 100) }}</td>
+                                    <td>{{ str_limit($news->body, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
