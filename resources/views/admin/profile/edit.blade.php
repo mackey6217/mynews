@@ -16,7 +16,7 @@
                     <div class="form-group row">
                         <label class="col-md-1" for="name">氏名</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="氏名" value="{{ $profile_form->name }}">
+                            <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">

@@ -25,8 +25,18 @@ class ProfileController extends Controller
         $profile->fill($form);
         $profile->save();
     
-    
         return redirect('admin/profile/create');
+    }
+    
+    public function index(Request $request)
+    {
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            $post = Profile::where('title', $cond_title)->get();
+        } else {
+             $post = Profile::all();
+        }
+        return view ('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     
     public function edit(Request $request)
@@ -48,6 +58,13 @@ class ProfileController extends Controller
         
         $profile->fill($profile_form)->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile/');
+    }
+    
+    public function delete(Request $request)
+    {
+        $profile = Profile::find($request->id);
+        $profile->delete();
+        return redirect('admin/profile/');
     }
 }
