@@ -32,11 +32,11 @@ class ProfileController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $post = Profile::where('title', $cond_title)->get();
+            $posts = Profile::where('title', $cond_title)->get();
         } else {
-             $post = Profile::all();
+            $posts = Profile::all();
         }
-        return view ('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     
     public function edit(Request $request)
