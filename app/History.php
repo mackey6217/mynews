@@ -9,8 +9,8 @@ class History extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
-        'news_id' => 'nullable',
-        'profile_id' => 'nullable',
-        'edited_at' => 'nullable',
+        'news_id' => 'required',
+        'profile_id' => 'required',
+        'edited_at' => 'required',
         );
 }
