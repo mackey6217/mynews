@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeHistoriesnewsTable extends Migration
+class Change_Histories_news_Table extends Migration
 {
     /**
      * Run the migrations.
