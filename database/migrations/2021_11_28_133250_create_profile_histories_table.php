@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIntroductionToProfilesTable extends Migration
+class CreateProfileHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddIntroductionToProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            //
-            $table->string('introduction')->after('hobby');
+        Schema::create('profile_histories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+             $table->integer('profile_id');
+            $table->string('edited_at');
+            
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class AddIntroductionToProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('profile_histories');
     }
 }
