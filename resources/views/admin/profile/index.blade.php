@@ -31,11 +31,11 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">氏名</th>
+                                <th width="10%">氏名</th>
                                 <th width="10%">性別</th>
-                                <th width="10%">誕生日</th>
-                                <th width="25%">趣味</th>
-                                <th width="25%">自己紹介</th>
+                                <th width="20%">誕生日</th>
+                                <th width="15%">趣味</th>
+                                <th width="20%">自己紹介</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -45,7 +45,7 @@
                                     <th>{{ $profile->id }}</th>
                                     <td>{{ str_limit($profile->name, 20) }}</td>
                                     <td>{{ str_limit($profile->gender, 10) }}</td>
-                                    <td>{{ str_limit($profile->birthday, 10 }}</td>
+                                    <td>{{ str_limit($profile->birthday, 10) }}</td>
                                     <td>{{ str_limit($profile->hobby, 100) }}</td>
                                     <td>{{ str_limit($profile->introduction, 100) }}</td>
                                     <td>
